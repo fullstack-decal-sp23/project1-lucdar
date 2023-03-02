@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lucas Clark">
+    <title>Lucas Clark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function funButton() {
+            answer = confirm("are you sure? If you are an employer YOU WILL BE CURSED.");
+            if (answer === false) {
+                alert("you have chosen wisely.")
+                return;
+            }
+            document.getElementById("requirements").style.visibility = "visible";
+        }
+
+        function ssnChange() {
+            ssn = document.getElementById("ssn");
+            ssnValue = document.getElementById("ssn-value");
+            ssnValue.innerHTML = ssn.value; 
+        }
+
+        async function submitForm() {
+            var audio = new Audio('rr.mp3');
+            audio.loop = true;
+            audio.volume = 0.3;
+
+            setTimeout(setContent, 0, "loading", "Loading.");
+            setTimeout(setContent, 1000, "loading", "Loading..");
+            setTimeout(setContent, 2000, "loading", "Loading...");
+            setTimeout(() => {
+                audio.play();
+                document.getElementById("gottem").style.visibility = "visible";
+            }, 3500);
+            
+            return false;
+        }
+
+        function setContent(id, content) {
+            document.getElementById(id).innerHTML = content;
+        }
+    </script>
+
+    <div class="introduction">
+        <div id="intro-title">
+            <img id="headshot" src="./headshot.webp" alt="headshot of Lucas Clark">
+            <div>
+                <h1 id="hello">Hi!</h1>
+                <h1 id="hello">I'm Lucas.</h1>
+            </div>
+        </div>
+        <hr>
+        <p1 id="intro-blurb">
+            <em>
+                I'm a software developer and community organizer studying Computer Science and Music at UC Berkeley. Nice to meet you!
+            </em>
+        </p1>
+    </div>
+
+    <hr>
+
+    <div class="projects">
+        <h2>Here are some things I'm doing</h2>
+        <div class="grid">
+            <img src="dgab-logo.png">
+            <div>
+                <a href="https://dancegames.berkeley.edu"><h3>Dance Games at Berkeley</h3></a>
+                <h4>Founder and President</h4>
+                <p>I founded UC Berkeley's Dance Games at Berkeley Student Organization. Our club owns and operates the machinet that was formerly in the MLK Jr. Student Union building. The Daily Cal even made <a href="https://www.dailycal.org/2022/05/11/the-dance-dance-revolution-machine">a mini-documentary</a> about us!</p>
+            </div>
+            <img src="sts-logo.png">
+            <div>
+                <h3>UC Berkeley SAIT</h3>
+                <h4>Senior Desktop Consultant</h4>
+                <p>My day job working in University IT.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="music">
+        <h2>Here's some music that I composed:</h3>
+        <hr>
+        <div>
+            <h3>The Edge of Dawn (Reharmonization)</h3>
+            <div class="music-container">
+                <iframe 
+                    width="275"
+                    height="155"
+                    src="https://www.youtube-nocookie.com/embed/uIRriTZpzZw"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+                <div class="description">
+                    <h4>Composed 2020:</h4>
+                    <p>This piece was a project I worked on during the COVID-19 Pandemic. I used techniques that I learned about in a reharmonization textbook. I collaborated with a vocalist to produce the recording.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div>
+            <h3>The Red Wheelbarrow</h3>
+            <iframe 
+                width="275"
+                height="155"
+                src="https://www.youtube-nocookie.com/embed/m_ypZZiUur0"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
+            <p><em>Composed 2019</em></p>
+        </div>
+        <hr>
+        <div>
+            <h3>Prelude to a Midnight Sea</h3>
+            <iframe 
+                width="275"
+                height="155"
+                src="https://www.youtube-nocookie.com/embed/q9JeEW5PxcA"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                allowfullscreen
+            ></iframe>
+            <p><em>Composed 2019</em></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1>Adendum</h1>
+    <p>Hi this website is not finished I did it for a class project and the deadline came up on me so the rest of this is what is required for the assignment!</p>
+
+    <hr>
+
+    <h5>click this button to have fun (not for employers)</h5>
+    <button id="funButton" onclick="funButton();">fun button :3 (IF AN EMPLOYER CLICKS THIS THEY WILL BE CURSED FOREVER)</button>
+    <div id="requirements">
+        <h6>wow the last header required for full credit. thanks guys!</h6>
+        <form id="coolForm" onsubmit="return false;">
+            <label>Social Security Number</label>
+            <input 
+                id="ssn"
+                min="0"
+                max="999999999"
+                step="1"
+                type="range"
+                oninput="ssnChange()"
+            >
+            <p id="ssn-value">1</p>
+            <label>Favorite Number</label>
+            <input id="favnum" type="range">
+            <p id="">42</p>
+            <br>
+            <input type="submit" onclick="submitForm()">
+        </form>
+        <p id="loading"></p>
+        <div id="gottem">
+            <h1>LMAO GOTTEM</h1>
+            <h6>(sound on)</h6>
+        </div>
+    </div>
+</body>
+</html>
